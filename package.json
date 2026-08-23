@@ -1,0 +1,24 @@
+{
+  "name": "parabank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParabankLab/parabank.git"
+  },
+  "keywords": [],
+  "author": "the_stock_mine <info@thestockmine.com>",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ParabankLab/parabank/issues"
+  },
+  "homepage": "https://github.com/ParabankLab/parabank#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.2",
+    "allure-playwright": "^3.9.0"
+  }
+}
