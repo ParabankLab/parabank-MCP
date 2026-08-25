@@ -1,17 +1,41 @@
 # created by
-Tamás András Péter 2026-06
+Tamás András Péter 2026-08
 
-# parabank# ParaBank Test Automation Ecosystem (Playwright + TypeScript)
+# ParaBank Model Context Protocol (MCP) Server
 
-A production-grade, highly scalable end-to-end testing framework built using modern web architecture and AI-augmented engineering principles.
+An enterprise-grade Model Context Protocol (MCP) server that enables Large Language Models (LLMs) to interact with ParaBank financial services via standard I/O (stdio) transport. Built with **TypeScript**, **Node.js**, and an **MVC (Model-View-Controller)** architecture.
 
-## 🏗️ Architectural Design
-This framework strictly implements an **MVC (Model-View-Controller) Paradigm** to ensure zero-flakiness, maximum execution speed, and long-term maintainability.
+## 🏗️ Architecture
 
-*   **Model Layer (Backend/State):** Direct REST API integration for instantaneous data seeding and user state injection, completely bypassing slow UI flows for setup.
-*   **View Layer (UI/POM):** Strictly isolated, type-safe Page Object Models (POM) utilizing Playwright's robust locator strategies and dynamic selectors.
-*   **Controller Layer (Specs):** Clean, descriptive test files (`*.spec.ts`) mapping business logic and asserting end-to-end user journeys.
+This project strictly adheres to the MVC design pattern to separate business logic, data formatting, and execution routing:
 
-## ⚡ Engineering Patterns
-*   **Lazy Loading:** Elements are resolved dynamically at the moment of interaction.
-*   **AI-First Quality Assurance:** Leveraging context-driven prompting (CO-STAR framework) to map exhaustive edge-case matrices and enforce a true Shift-Left testing methodology.
+- **Models (`src/models/`):** Interface with ParaBank REST APIs via Axios.
+- **Views (`src/views/`):** Format output payloads into clean JSON structured for LLM context windows.
+- **Controllers (`src/controllers/`):** Validate input parameters and handle execution logic.
+- **Server Entrypoint (`src/index.ts`):** Registers MCP tools and establishes the stdio transport layer using `@modelcontextprotocol/sdk`.
+
+---
+
+## 🚀 Registered MCP Tools
+
+| Tool Name | Parameters | Description |
+| :--- | :--- | :--- |
+| `get_customer_accounts` | `customerId` (number) | Fetches all accounts associated with a customer ID. |
+| `transfer_funds` | `fromAccountId`, `toAccountId`, `amount` | Transfers money between two accounts. |
+| `get_account_transactions`| `accountId` (number) | Retrieves transaction history for an account. |
+| `get_transaction_by_id` | `transactionId` (number) | Fetches detailed information for a single transaction. |
+| `pay_bill` | `accountId`, `amount`, `payee` (object) | Automates bill payments to a vendor or utility company. |
+
+---
+
+## 🛠️ Setup & Installation
+
+### Prerequisites
+- **Node.js**: v18+
+- **npm**
+
+### Installation
+```bash
+git clone [https://github.com/YOUR_USERNAME/parabank-mcp.git](https://github.com/YOUR_USERNAME/parabank-mcp.git)
+cd parabank-mcp
+npm install
