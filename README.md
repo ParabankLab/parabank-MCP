@@ -36,6 +36,6 @@ This project strictly adheres to the MVC design pattern to separate business log
 
 ### Installation
 ```bash
-git clone [https://github.com/YOUR_USERNAME/parabank-mcp.git](https://github.com/YOUR_USERNAME/parabank-mcp.git)
+git clone [https://github.com/ParabankLab/parabank-MCP.git]
 cd parabank-mcp
 npm install
