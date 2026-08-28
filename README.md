@@ -47,8 +47,8 @@ npm install
 - npx @modelcontextprotocol/inspector node dist/index.js (Run index.ts)   
  
 ### UI
-- MCP Inspector opens
-- Connect
+- MCP Inspector UI opens
+- click on Connect
 - click on Tools
 - choose tool (get_customer_accounts, transfer_funds, get_account_transactions, get_transaction_by_id, pay_bill)
      
